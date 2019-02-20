@@ -1,36 +1,68 @@
 <?php
-class Camera {
-    public function turnOn() {}
-    public function turnOff() {}
-    public function rotate($degrees) {}
+class Camera
+{
+    public function turnOn()
+    {
+    }
+    public function turnOff()
+    {
+    }
+    public function rotate($degrees)
+    {
+    }
 }
  
-class Light {
-    public function turnOn() {}
-    public function turnOff() {}
-    public function changeBulb() {}
+class Light
+{
+    public function turnOn()
+    {
+    }
+    public function turnOff()
+    {
+    }
+    public function changeBulb()
+    {
+    }
 }
  
-class Sensor {
-    public function activate() {}
-    public function deactivate() {}
-    public function trigger() {}
+class Sensor
+{
+    public function activate()
+    {
+    }
+    public function deactivate()
+    {
+    }
+    public function trigger()
+    {
+    }
 }
  
-class Alarm {
-    public function activate() {}
-    public function deactivate() {}
-    public function ring() {}
-    public function stopRing() {}
+class Alarm
+{
+    public function activate()
+    {
+    }
+    public function deactivate()
+    {
+    }
+    public function ring()
+    {
+    }
+    public function stopRing()
+    {
+    }
 }
  
-class SecurityFacade {
+class SecurityFacade
+{
     private $_camera1, $_camera2;
     private $_light1, $_light2, $_light3;
     private $_sensor;
     private $_alarm;
  
-    public function __construct() {
+    public function __construct()
+    {
         $this->_camera1 = new Camera();
         $this->_camera2 = new Camera();
  
@@ -42,7 +74,8 @@ class SecurityFacade {
         $this->_alarm = new Alarm();
     }
  
-    public function activate() {
+    public function activate()
+    {
         $this->_camera1->turnOn();
         $this->_camera2->turnOn();
  
@@ -54,7 +87,8 @@ class SecurityFacade {
         $this->_alarm->activate();
     }
  
-    public  function deactivate() {
+    public  function deactivate()
+    {
         $this->_camera1->turnOff();
         $this->_camera2->turnOff();
  

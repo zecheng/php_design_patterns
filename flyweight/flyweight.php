@@ -1,36 +1,43 @@
 <?php
-abstract class Resources{
-	public $resource=null;
+abstract class Resources
+{
+    public $resource=null;
 
-	abstract public function operate();
+    abstract public function operate();
 }
 
-class unShareFlyWeight extends Resources{
-	public function __construct($resource_str) {
+class unShareFlyWeight extends Resources
+{
+    public function __construct($resource_str)
+    {
         $this->resource = $resource_str;
     }
 
-    public function operate(){
-    	echo $this->resource."<br>";
+    public function operate()
+    {
+        echo $this->resource."<br>";
     }
 }
 
-class shareFlyWeight extends Resources{
-	private $resources = array();
+class shareFlyWeight extends Resources
+{
+    private $resources = array();
 
-    public function get_resource($resource_str){
-    	if(isset($this->resources[$resource_str])) {
-		    return $this->resources[$resource_str];
-		}else {
-		    return $this->resources[$resource_str] = $resource_str;
-		}
+    public function get_resource($resource_str)
+    {
+        if(isset($this->resources[$resource_str])) {
+            return $this->resources[$resource_str];
+        }else {
+            return $this->resources[$resource_str] = $resource_str;
+        }
     }
 
-	public function operate(){
-		foreach ($this->resources as $key => $resources) {
-			echo $key.":".$resources."<br>";
-		}
-	}
+    public function operate()
+    {
+        foreach ($this->resources as $key => $resources) {
+            echo $key.":".$resources."<br>";
+        }
+    }
 }
 
  
